@@ -79,7 +79,7 @@ def email_alert(subject, body, to):
 
     # Create a user
     # Put your gmail account and password
-    user = "kenshiin33@gmail.com"
+    user = "sender@gmail.com"
 
     # assign the sender to the user
     msg['from'] = user
@@ -89,7 +89,7 @@ def email_alert(subject, body, to):
     # To gain the password you must active the 2 factor authentication
     # Activate the 'Other' in the app password
     # Gain the generated password in the section
-    password = "vqjjyaxeiqnhrkaq"
+    password = "senderpassword"
 
     # create smtp server
     server = smtplib.SMTP("smtp.gmail.com", 587)
@@ -103,4 +103,4 @@ def email_alert(subject, body, to):
     server.quit()
 
 # email function call
-email_alert("wlan0test", wifi, "fikrichuck@gmail.com")
+email_alert("wlan0test", wifi, "receiver@gmail.com")
