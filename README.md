@@ -1,8 +1,8 @@
 # Forkstar
 
 ## About The Project
-The idea of the this program was first introduced by github.com/davidbombal
-Fully authored by fiekzz
+* The idea of the this program was first introduced by github.com/davidbombal
+* Fully authored by fiekzz
 
 ## Getting started
 ### 1. Clone the repo
